@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApp1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Closed="Window_Closed"
+        Closing="Window_Closing"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"     
+        Title="Window1" Height="500" Width="500" ResizeMode="NoResize">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="121*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Ogrenci Ad :" HorizontalAlignment="Left" Margin="53,63,0,0" VerticalAlignment="Top" Height="38" Width="155" FontSize="18"/>
+        <Label Content="Ogrenci Soyad :" HorizontalAlignment="Left" Margin="53,106,0,0" VerticalAlignment="Top" Height="38" Width="155" FontSize="18"/>
+        <Label Content="Ogrenci Yaş :" HorizontalAlignment="Left" Margin="53,149,0,0" VerticalAlignment="Top" Height="38" Width="155" FontSize="18"/>
+        <Label Content="Ogrenci Şehir :" HorizontalAlignment="Left" Margin="53,192,0,0" VerticalAlignment="Top" Height="38" Width="155" FontSize="18"/>
+        <TextBox x:Name="TextBoxAd"  HorizontalAlignment="Left" Height="38" Margin="213,63,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="184" FontSize="18" />
+        <TextBox x:Name="TextBoxSoyad"  HorizontalAlignment="Left" Height="38" Margin="213,106,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="184" FontSize="18"/>
+        <TextBox x:Name="TextBoxYas"  HorizontalAlignment="Left" Height="38" Margin="213,149,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="184" FontSize="18" />
+        <TextBox x:Name="TextBoxSehir" HorizontalAlignment="Left" Height="38" Margin="213,192,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="184" FontSize="18" />
+        <Button x:Name="saveBTN" Content="Kaydet&#xD;&#xA;" HorizontalAlignment="Center" Height="85" Margin="94,324,86.439,60" VerticalAlignment="Center" Width="304" Click="SaveBTN_Click" FontSize="20"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1200" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="556*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="183*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="DataGridXMAL"  HorizontalAlignment="Left" Height="599" Margin="196,10,0,0" VerticalAlignment="Top" Width="980" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" Grid.Column="1" SelectionChanged="DataGridXMAL_SelectionChanged">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="DarkCyan"/>
+                    <Setter Property="FontWeight" Value="Normal"/>
+                    <Setter Property="FontSize" Value="19"/>
+                    <Setter Property="BorderThickness" Value="1,2,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" Ogrenci ID" Binding="{Binding studentID}" Width="196" />
+                <DataGridTextColumn Header=" Ad" Binding="{Binding studentName}" Width="196" />
+                <DataGridTextColumn Header=" Soyad" Binding="{Binding studentSurname}" Width="196" />
+                <DataGridTextColumn Header=" Yas" Binding="{Binding studentAge}" Width="196" />
+                <DataGridTextColumn Header=" Sehir" Binding="{Binding studentCity}" Width="196" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="ShowBTN" Content="Tabloyu Yenile" Grid.Column="1" HorizontalAlignment="Left" Margin="24,51,0,0" VerticalAlignment="Top" Width="150" Height="75" FontSize="18" Click="ShowBTN__Click" Visibility="Hidden"/>
+        <Button x:Name="EkleBTN" Content="Tabloya Veri Ekle" Grid.Column="1" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" Width="150" Height="75" FontSize="18" Click="Button_Click"/>
+        <ComboBox x:Name="ComboBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="24,135,0,0" VerticalAlignment="Top" Width="150" FontSize="20" Height="46" SelectionChanged="ComboBox1_SelectionChanged"/>
+
+
+    </Grid>
+</Window>
