@@ -36,17 +36,17 @@ namespace WpfApp1
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
         {
              
-             if(TextBoxAd.Text!="" && TextBoxSoyad.Text!="" && TextBoxYas.Text!="" && TextBoxSehir.Text!="")
+             if(TextBoxAd.Text!="" && TextBoxSoyad.Text!="" && TextBoxYas.Text!="" && TextBoxBolum.Text!="")
             {
                 kayit.id++;
              kayit.ad = TextBoxAd.Text;
              kayit.soyad = TextBoxSoyad.Text;
              kayit.yas = int.Parse(TextBoxYas.Text);
-             kayit.sehir = TextBoxSehir.Text;
+             kayit.bolum = TextBoxBolum.Text;
                 TextBoxAd.Text = null;
                 TextBoxSoyad.Text = null;
                 TextBoxYas.Text = null;
-                TextBoxSehir.Text = null;
+                TextBoxBolum.Text = null;
                 a = 1;
                 this.Visibility = Visibility.Hidden;
             }
@@ -55,7 +55,7 @@ namespace WpfApp1
                 if (TextBoxAd.Text == "")  MessageBox.Show("Ad boş geçilemez.", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Error);
                else if (TextBoxSoyad.Text == "") MessageBox.Show("Soyad boş geçilemez.", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Error);
                else if (TextBoxYas.Text == "") MessageBox.Show("Yaş boş geçilemez.", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Error);
-               else if (TextBoxSehir.Text == "") MessageBox.Show("Şehir boş geçilemez.", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Error);
+               else if (TextBoxBolum.Text == "") MessageBox.Show("Bölüm boş geçilemez.", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
 
@@ -107,11 +107,11 @@ namespace WpfApp1
                 return kayit.yas.ToString();
             }
         }
-        public string SehirG
+        public string BolumG
         {
             get
             {
-                return kayit.sehir;
+                return kayit.bolum;
             }
         }
 
@@ -121,7 +121,7 @@ namespace WpfApp1
             public string ad { get; set; }
             public string soyad { get; set; }
             public int yas { get; set; }
-            public string sehir { get; set; }
+            public string bolum { get; set; }
     
         }
 

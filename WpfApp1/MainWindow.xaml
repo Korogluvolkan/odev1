@@ -13,7 +13,7 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="183*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="DataGridXMAL"  HorizontalAlignment="Left" Height="599" Margin="196,10,0,0" VerticalAlignment="Top" Width="980" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" Grid.Column="1" SelectionChanged="DataGridXMAL_SelectionChanged">
+        <DataGrid x:Name="DataGridXMAL"  HorizontalAlignment="Left" Height="599" Margin="196,10,0,0" VerticalAlignment="Top" Width="980" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="3" Grid.Column="1" SelectionChanged="DataGridXMAL_SelectionChanged" Visibility="Hidden">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="DarkCyan"/>
@@ -29,13 +29,39 @@
                 <DataGridTextColumn Header=" Ad" Binding="{Binding studentName}" Width="196" />
                 <DataGridTextColumn Header=" Soyad" Binding="{Binding studentSurname}" Width="196" />
                 <DataGridTextColumn Header=" Yas" Binding="{Binding studentAge}" Width="196" />
-                <DataGridTextColumn Header=" Sehir" Binding="{Binding studentCity}" Width="196" />
+                <DataGridTextColumn Header=" Bölüm" Binding="{Binding studentDepartment}" Width="196" />
 
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="ShowBTN" Content="Tabloyu Yenile" Grid.Column="1" HorizontalAlignment="Left" Margin="24,51,0,0" VerticalAlignment="Top" Width="150" Height="75" FontSize="18" Click="ShowBTN__Click" Visibility="Hidden"/>
-        <Button x:Name="EkleBTN" Content="Tabloya Veri Ekle" Grid.Column="1" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" Width="150" Height="75" FontSize="18" Click="Button_Click"/>
-        <ComboBox x:Name="ComboBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="24,135,0,0" VerticalAlignment="Top" Width="150" FontSize="20" Height="46" SelectionChanged="ComboBox1_SelectionChanged"/>
+        <Button x:Name="EkleBTN" Content="Tabloya Veri Ekle" Grid.Column="1" HorizontalAlignment="Left" Margin="24,171,0,0" VerticalAlignment="Top" Width="150" Height="76" FontSize="18" Click="Button_Click" Visibility="Hidden"/>
+        <ComboBox x:Name="ComboBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="24,267,0,0" VerticalAlignment="Top" Width="150" FontSize="20" Height="46" SelectionChanged="ComboBox1_SelectionChanged" Visibility="Hidden"/>
+        <Button x:Name="KisiBilgiBTN" Content="Kişisel Bilgiler" Grid.Column="1" HorizontalAlignment="Left" Height="58" Margin="24,15,0,0" VerticalAlignment="Top" Width="150" FontSize="18" Click="KisiBilgiBTN_Click"/>
+        <Button x:Name="TListBTN" Content="Tabloyu Listele" Grid.Column="1" HorizontalAlignment="Left" Height="58" Margin="24,93,0,0" VerticalAlignment="Top" Width="150" FontSize="18" Click="TListBTN_Click"/>
+        <Grid x:Name="PersonaLInfGrid" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="599" Margin="196,15,0,0" VerticalAlignment="Top" Width="980">
+            <Label Content="" HorizontalAlignment="Left" Height="980" VerticalAlignment="Top" Width="326" RenderTransformOrigin="0.5,0.5" Margin="331,-339,0,-42">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+                <Label.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFB04800" Offset="1"/>
+                        <GradientStop Color="#FF320000"/>
+                    </LinearGradientBrush>
+                </Label.Background>
+            </Label>
+
+            <Image HorizontalAlignment="Left" Height="222" Margin="85,157,0,0" VerticalAlignment="Top" Width="222" Source="Images/profilefoto.jpg" Stretch="Uniform"/>
+            <Label Content="Volkan Köroğlu" HorizontalAlignment="Left" Height="47" Margin="46,399,0,0" VerticalAlignment="Top" Width="186" FontSize="24"/>
+            <Label Content="Arel Üniversitesi - Bilgi İşlem Daire Başkanlığı - Teknik Uzman" HorizontalAlignment="Left" Height="47" Margin="42,446,0,0" VerticalAlignment="Top" Width="687" FontSize="20" Background="White" Foreground="#FF7C7C7C"/>
+            <Label Content="36 Yaşında / Evli" HorizontalAlignment="Left" Height="47" Margin="42,491,0,0" VerticalAlignment="Top" Width="519" FontSize="20" Background="White" Foreground="#FF7C7C7C"/>
+
+        </Grid>
 
 
     </Grid>

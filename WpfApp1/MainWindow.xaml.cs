@@ -27,7 +27,7 @@ namespace WpfApp1
         public ArrayList Namelist = new ArrayList();
         public ArrayList Surnamelist = new ArrayList();
         public ArrayList Agelist = new ArrayList();
-        public ArrayList Citylist = new ArrayList();
+        public ArrayList DepartentList= new ArrayList();
 
         public MainWindow()
         {
@@ -53,14 +53,14 @@ namespace WpfApp1
                     kayit.studentName = win1.AdG;
                     kayit.studentSurname = win1.SoyadG;
                     kayit.studentAge = win1.YasG;
-                    kayit.studentCity = win1.SehirG;
+                    kayit.studentDepartment = win1.BolumG;
                     DataGridXMAL.Items.Add(kayit);
                     ComboBox1.Items.Add(kayit.studentID);
                     IDlist.Add(win1.IDG);
                     Namelist.Add(win1.AdG);
                     Surnamelist.Add(win1.SoyadG);
                     Agelist.Add(win1.YasG);
-                    Citylist.Add(win1.SehirG);
+                    DepartentList.Add(win1.BolumG);
 
                 }
                 win1.a = 2;
@@ -74,7 +74,7 @@ namespace WpfApp1
             public string studentName { get; set; }
             public string studentSurname { get; set; }
             public string studentAge { get; set; }
-            public string studentCity { get; set; }
+            public string studentDepartment { get; set; }
 
         }
 
@@ -99,8 +99,23 @@ namespace WpfApp1
 
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show(IDlist[ComboBox1.SelectedIndex].ToString()+"-"+Namelist[ComboBox1.SelectedIndex].ToString()+"-"+Surnamelist[ComboBox1.SelectedIndex].ToString()+"-"+Agelist[ComboBox1.SelectedIndex].ToString()+"-"+Citylist[ComboBox1.SelectedIndex].ToString());
+            MessageBox.Show(IDlist[ComboBox1.SelectedIndex].ToString()+"-"+Namelist[ComboBox1.SelectedIndex].ToString()+"-"+Surnamelist[ComboBox1.SelectedIndex].ToString()+"-"+Agelist[ComboBox1.SelectedIndex].ToString()+"-"+ DepartentList[ComboBox1.SelectedIndex].ToString());
         }
-        
+
+        private void TListBTN_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridXMAL.Visibility = Visibility.Visible;
+            ComboBox1.Visibility = Visibility.Visible;
+            EkleBTN.Visibility = Visibility.Visible;
+            PersonaLInfGrid.Visibility = Visibility.Hidden;
+        }
+
+        private void KisiBilgiBTN_Click(object sender, RoutedEventArgs e)
+        {
+            PersonaLInfGrid.Visibility = Visibility.Visible;
+            DataGridXMAL.Visibility = Visibility.Hidden;
+            EkleBTN.Visibility = Visibility.Hidden;
+            ComboBox1.Visibility = Visibility.Hidden;
+        }
     }
 }
